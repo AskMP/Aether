@@ -1,0 +1,7 @@
+{
+    "protocol" : "mqtt://",
+    "host" : "localhost",
+    "port" : 1883,
+    "username" : null,
+    "password" : null
+}
