@@ -5,6 +5,11 @@
     
     Æther.on('ready', () => {
         
+        // Ensure that we’ve loaded the Twitter module into Æther
+        if (Æther.serialPort === null) {
+            Æther.loadModule('serialPort');
+        }
+        
         /****************************************************************
         * A really good addition to the serialPort module is connecting
         * it to socket.io’s events. You can easily connect it similar

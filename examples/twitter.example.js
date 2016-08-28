@@ -5,6 +5,10 @@
     
     Æther.on('ready', () => {
 
+        // Ensure that we’ve loaded the Twitter module into Æther
+        if (Æther.twitterStream === null) {
+            Æther.loadModule('twitterStream');
+        }
         /****************************************************************
         * Setting up the event listeners is VERY straightforward
         ***/
