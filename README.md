@@ -26,6 +26,7 @@ Creating a static site is fairly straightforward. You create a folder within the
 + Write some HTML into that new html file
 ```html
 <!doctype html>
+<html>
     <head>
         <title>My Awesome Page!</title>
     </head>
@@ -51,7 +52,7 @@ Creating a standard webserver on port 80 is as simple as updating the config fil
 ```
 + Run the app.js in NodeJS `sudo node app.js`
 
-## Using the Socket.io module
+## Using th Socket.io module
 The **Socket.io** module called socketServer automatically loads unless removed and works easily by adding methods to the `potentialEvents` attribute.
 
 On the client side, within the `app.js` file, you could write:
