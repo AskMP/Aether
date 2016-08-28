@@ -51,7 +51,7 @@ Creating a standard webserver on port 80 is as simple as updating the config fil
 ```
 + Run the app.js in NodeJS `sudo node app.js`
 
-## Using th Socket.io module
+## Using the Socket.io module
 The **Socket.io** module called socketServer automatically loads unless removed and works easily by adding methods to the `potentialEvents` attribute.
 
 On the client side, within the `app.js` file, you could write:
