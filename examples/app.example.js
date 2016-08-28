@@ -1,4 +1,4 @@
-/*jslint node: true*/
+/*eslint-env es6*/
 (function () {
     "use strict";
     
