@@ -2,8 +2,8 @@
 (function () {
     "use strict";
     
-    var Aether = require('../');
+    var Æther = require('../');
     
-    Aether.on('ready', () => Aether.log.notify('Server is up and running'));
+    Æther.on('ready', () => Æther.log.notify('Server is up and running'));
     
 }());

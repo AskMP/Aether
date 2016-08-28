@@ -1,0 +1,6 @@
+{
+    "baudrate" : 9600,
+    "comName" : "",
+    "bootDelay" : 400,
+    "terminator" : "\r\n"
+}

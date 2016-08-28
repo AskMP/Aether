@@ -1,11 +1,12 @@
 {
-  "version": "1.2.0",
-  "name": "Æther",
+  "version": "1.2.1",
+  "name": "Aether",
   "description": "Simple personal framework for quick webapp tools",
   "author": {
     "name": "Matthew Potter",
     "email": "mdpotter@gmail.com"
   },
+  "license": "MIT",
   "engines": {
     "node": ">=4.5.0"
   },
@@ -19,11 +20,11 @@
     "nodejs-websocket": "1.5.0",
     "chalk" : "latest",
     "mqtt" : "latest",
-    "node-fetch" : "latest"
+    "node-fetch" : "latest",
+    "serialport": "latest",
+    "twit" : "latest"
   },
   "optional-dependencies": {
-    "serialport": "latest",
-    "node-hid" : "latest",
     "socket.io-client": "latest"
   }
 }
