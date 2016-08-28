@@ -3,8 +3,8 @@ Simple personal framework for quick webapp tools where things like ExpressJS and
 are just built in and ready to go.
 
 ## Basic Installation:
-+ Create a directory called `npm_modules` in your root folder
-+ Create a new directory called `Aether` within the `npm_modules` directory.
++ Create a directory called `node_modules` in your root folder
++ Create a new directory called `Aether` within the `node_modules` directory.
 + Download the contents repo into that directory
 + Open the directory and run: `npm install`
 + Navigate back to the top root folder and create a file called `app.js`
