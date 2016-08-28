@@ -58,11 +58,7 @@ The **Socket.io** module called socketServer automatically loads unless removed 
 On the client side, within the `app.js` file, you could write:
 ```JavaScript
 Aether.socketServer.potentialEvents.hello = (data, connection) => {
-    if (data.toLowerString() === 'open the pod bay doors hal') {
-        connection.emit('hal', 'I can’t do that dave.');
-    } else {
-        connection.emit('response', 'I received: ' + data);
-    }
+    connection.emit('response', 'I received: ' + data);
 }
 ```
 You would then need to include the **Socket.io** script within your HTML which can be done by either using a CDN or the header script:
@@ -73,16 +69,11 @@ You would then need to include the **Socket.io** script within your HTML which c
 
 On the client side within the `/html/js/interface.js` file, you would write:
 ```JavaScript
-var server = (document.location.port !== "") ? io(document.location.origin + ':' + document.location.port) : io();
+var server = io();
 
 server.on('response', (message) => console.log(message));
-server.on('hal', (message) => console.log(message));
 
 server.emit('hello', 'world');
-```
-With the site open you should see “I received: world” in the console. You can test the "hal" event by entering in your console:
-```JavaScript
-server.emit('hello', 'Open the pod bay doors HAL');
 ```
 ### A Little bit more with Socket.io
 You likely want to do something a bit more with **Socket.io**, such as broadcast when something has occured. In order to do this, simply use the `io` attribute of the socketServer to command **Socket.io** like you would natively.
