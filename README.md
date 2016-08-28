@@ -13,13 +13,13 @@ are just built in and ready to go.
 + Visit http://localhost:8080 in your browser
 
 ## Simple Webserver
-Creating a static site is fairly straighforward. You create a folder within the root directory of your applications called `html` and unless there is a matching route defined, the file is able to be directly accessed. As an example, references to `/css/interface.css` would be located at `/html/js/interface.js`.
+Creating a static site is fairly straighforward. You create a folder within the root directory of your applications called `html` and unless there is a matching route defined, the file is able to be directly accessed. As an example, references to `/js/interface.js` would be located at `/html/js/interface.js`.
 + Install using method above
 + Edit the routes file located `./lib/routes/basic.js` within aether and change the path of the initial route from `/` to `/example`
 + Create a new directory within the root of your application called `html` and a file called `index.html`
 ```
 /app.js
-/http/¬
+/html/¬
     index.html
 /node_modules/
 ```
@@ -50,3 +50,8 @@ Creating a standard webserver on port 80 is as simple as updating the config fil
             …
 ```
 + Run the app.js in NodeJS `sudo node app.js`
+
+## Using Socket.io
+The Socket.io module called socketServer automatically loads unless removed and works easily by adding methods to the `potentialEvents` attribute.
+```javascript
+```
