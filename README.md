@@ -17,24 +17,24 @@ Creating a static site is fairly straightforward. You create a folder within the
 + Install using method above
 + Edit the routes file located `./lib/routes/basic.js` within aether and change the path of the initial route from `/` to `/example`
 + Create a new directory within the root of your application called `html` and a file called `index.html`
-   ```
-   /app.js
-   /html/¬
-       index.html
-   /node_modules/
-   ```
+```
+/app.js
+/html/¬
+ index.html
+/node_modules/
+```
 + Write some HTML into that new html file
-   ```html
-   <!doctype html>
-   <html>
-       <head>
-           <title>My Awesome Page!</title>
-       </head>
-       <body>
-           <h1>Welcome to my Awesome Static Page!</h1>
-       </body>
-   </html>
-   ```
+```html
+<!doctype html>
+<html>
+ <head>
+  <title>My Awesome Page!</title>
+ </head>
+ <body>
+  <h1>Welcome to my Awesome Static Page!</h1>
+ </body>
+</html>
+```
 + Run the app.js file using NodeJS ``` node app.js ```
 + Visit `http://localhost:8080`
 
@@ -42,33 +42,33 @@ Creating a static site is fairly straightforward. You create a folder within the
 Creating a standard webserver on port 80 is as simple as updating the config file and running the NodeJS app under the super user.
 + Repeat the process for the Simple Webserver installation
 + Change the port number within the `webServer.config.json` file
-   ```
-   /node_modules/¬
-       /aether/¬
-           /lib/¬
-               /config/¬
-                   …
-                   webServer.config.json
-                   …
-   ```
+```
+/node_modules/¬
+ /aether/¬
+  /lib/¬
+/config/¬
+ …
+ webServer.config.json
+ …
+```
 + Run the app.js in NodeJS `sudo node app.js`
-   You can then create your own custom routes by editing / duplicating the `basic.js` or `api.js` file within the routes directory
-   ```
-    /node_modules/¬
-           /aether/¬
-                /lib/¬
-                   /routes/¬
-                       api.js
-                       basic.js
-   ```
+You can then create your own custom routes by editing / duplicating the `basic.js` or `api.js` file within the routes directory
+```
+ /node_modules/¬
+  /aether/¬
+ /lib/¬
+ /routes/¬
+  api.js
+  basic.js
+```
 + The route files are loaded and are treated as either a collection of routes or a single route. These routes have 3 attributes:
-   ```JavaScript
-   {
-       path : String [ExpressJS style route],
-       method : String [all, get, post, put, delete] // Optional defaults to “all”,
-       handler : function (request, response, next) // See ExpressJS documentation for details https://expressjs.com/en/guide/routing.html
-   }
-   ```
+```JavaScript
+{
+ path : String [ExpressJS style route],
+ method : String [all, get, post, put, delete] // Optional defaults to “all”,
+ handler : function (request, response, next) // See ExpressJS documentation for details https://expressjs.com/en/guide/routing.html
+}
+```
 
 ## Using th Socket.io module
 The *Socket.io* module called socketServer automatically loads unless removed and works easily by adding methods to the `potentialEvents` attribute.
@@ -76,7 +76,7 @@ The *Socket.io* module called socketServer automatically loads unless removed an
 On the client side, within the `app.js` file, you could write:
 ```JavaScript
 Aether.socketServer.potentialEvents.hello = (data, connection) => {
-    connection.emit('response', 'I received: ' + data);
+ connection.emit('response', 'I received: ' + data);
 }
 ```
 You would then need to include the *Socket.io* script within your HTML which can be done by either using a CDN or the header script:
