@@ -1,0 +1,41 @@
+<html>
+    <head>
+    <body>
+        <form>
+            <input id="shout" value="" placeholder="" />
+            <input type="submit" value="Shout" /><br/>
+            <small>Open a second window with this address to shout back and forth.</small>
+        </form>
+        <script>
+        (function () {
+            "use strict";
+            var init = () => new Promise((resolve, reject) => {
+                    var scr = document.createElement('script');
+                    scr.src = document.location.href + 'socket.io/socket.io.js';
+                    scr.addEventListener('load', resolve);
+                    document.head.appendChild(scr);
+                }),
+                setupIO = () => new Promise((resolve, reject) => {
+                    server = io();
+                    resolve();
+                    server.on('welcome', (msg) => console.log(msg));
+                    server.on('shouting', (msg) => console.log(msg.toUpperCase()));
+                }),
+                shout = (evt) => {
+                    evt.preventDefault();
+                    var mouth = document.getElementById('shout');
+                    if (mouth.value === '') return;
+                    server.emit('shout', mouth.value);
+                    mouth.value = '';
+                },
+                server;
+            init()
+                .then(setupIO)
+                .then(() => server.emit('greetings', 'Good morning!'))
+                .catch(err => console.log(err));
+            
+            document.getElementsByTagName('form')[0].addEventListener('submit', shout);
+        }());
+        </script>
+    </body>
+</html>
