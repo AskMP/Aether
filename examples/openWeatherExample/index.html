@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                text-align: center;
+            }
+            h2 {
+                margin-bottom: 0px;
+            }
+            h3 {
+                margin: 0px;
+            }
+            ul {
+                list-style: none;
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            li {
+                display: inline-block;
+                margin: 0px 15px;
+            }
+        </style>
+    <body>
+        <div>
+            <h1>Current Conditions for <span id="location"></span></h1>
+            <div id="currentConditions"></div>
+        </div>
+        <div>
+            <h1>7 Day Forcast</h1>
+            <div id="forcast">
+                <ul></ul>
+            </div>
+        </div>
+        <script>
+        (function () {
+            "use strict";
+            var init = () => new Promise((resolve, reject) => {
+                    var scr = document.createElement('script');
+                    scr.src = document.location.href + 'socket.io/socket.io.js';
+                    scr.addEventListener('load', resolve);
+                    document.head.appendChild(scr);
+                }),
+                setupIO = () => new Promise((resolve, reject) => {
+                    server = io();
+                    server.on('geolocation', updateGeolocation);
+                    server.on('forcast', updateForcast);
+                    server.on('current', updateCurrent);
+                    resolve();
+                }),
+                requestData = () => new Promise((resolve, reject) => {
+                    server.emit('getGeolocation');
+                    server.emit('getForcast');
+                    server.emit('getCurrent');
+                    resolve();
+                }),
+                updateGeolocation = (data) => {
+                    document.getElementById('location').textContent = data.name;
+                },
+                months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                updateForcast = (data) => {
+                    var forcastList = document.querySelectorAll('#forcast > ul')[0];
+                    Array.from(forcastList.querySelectorAll('li')).forEach(el => el.parentNode.removeChild(el));
+                    data.list.forEach(day => {
+                        var li = document.createElement('li'),
+                            date = new Date(day.dt * 1000);
+                        
+                        li.innerHTML = `<h3>${months[date.getMonth()]} ${date.getDate()}</h3><sup>${Math.round(day.temp.max)}</sup>/<sub>${Math.round(day.temp.min)}</sub><br/>${day.weather[0].main}`;
+                        forcastList.appendChild(li);
+                    });
+                },
+                updateCurrent = (data) => {
+                    document.getElementById('currentConditions').innerHTML = `<h2>${Math.round(data.temp)}&deg; <small><sup>${Math.round(data.temp_max)}</sup>/<sub>${Math.round(data.temp_min)}</sub></small> ${data.weather[0].description}</h2>`;
+                },
+                server;
+            init()
+                .then(setupIO)
+                .then(requestData)
+                .catch(err => console.log(err));
+        }());
+        </script>
+    </body>
+</html>

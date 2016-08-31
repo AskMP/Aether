@@ -1,5 +1,6 @@
 {
     "cityID" : 6167865,
-    "appID" : null,
-    "updateInterval" : 300000
+    "appID" : "",
+    "updateInterval" : 300000,
+    "units" : "metric"
 }
