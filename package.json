@@ -21,10 +21,12 @@
     "chalk" : "latest",
     "mqtt" : "latest",
     "node-fetch" : "latest",
-    "serialport": "latest",
-    "twit" : "latest"
+    "twit" : "latest",
+    "object.observe" : "latest"
   },
   "optional-dependencies": {
-    "socket.io-client": "latest"
+    "socket.io-client": "latest",
+    "serialport": "latest",
+    "node-hid": "latest"
   }
 }

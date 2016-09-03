@@ -4,6 +4,10 @@
     
     var Æther = require('../');
     
+    /***********************************************************/
+    // IMPORTANT: Be sure to install the serialport dependency //
+    /***********************************************************/
+    
     Æther.on('ready', () => {
         
         // Ensure that we’ve loaded the Twitter module into Æther
