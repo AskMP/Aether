@@ -7,7 +7,7 @@
     // IMPORTANT: Be sure to install the node-hid dependency //
     /*********************************************************/
     
-    // To simplify thins, we’ll just output to the console the buttons
+    // To simplify things, we’ll just output to the console the buttons
     // pushed however, the ideal thing would likely be a socketServer
     // pairing or MQTT pairing for near-real-time communication of the
     // controller and a front end or external hardware integration.
