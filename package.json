@@ -1,5 +1,5 @@
 {
-  "version": "1.2.1",
+  "version": "1.2.2",
   "name": "Aether",
   "description": "Simple personal framework for quick webapp tools",
   "author": {
@@ -19,14 +19,16 @@
     "socket.io-parser": "2.2.6",
     "nodejs-websocket": "1.5.0",
     "chalk" : "latest",
-    "mqtt" : "latest",
+    "moment" : "latest",
+    "fs-extra" : "latest",
     "node-fetch" : "latest",
-    "twit" : "latest",
-    "object.observe" : "latest"
-  },
-  "optional-dependencies": {
     "socket.io-client": "latest",
     "serialport": "latest",
-    "node-hid": "latest"
+    "twit" : "latest",
+    "object.observe" : "latest",
+    "fluent-ffmpeg" : "latest",
+    "mqtt" : "latest",
+    "node-hid": "latest",
+    "twilio" : "latest"
   }
 }

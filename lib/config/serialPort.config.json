@@ -1,6 +1,8 @@
 {
     "baudrate" : 9600,
-    "comName" : "",
+    "com" : {
+        "manufacturer" : "arduino"
+    },
     "bootDelay" : 400,
     "terminator" : "\r\n"
 }

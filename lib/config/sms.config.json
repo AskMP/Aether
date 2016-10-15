@@ -1,0 +1,9 @@
+{
+    "twilio" : {
+        "sid" : "[TWILIO SID]",
+        "token" : "[TWILIO TOKEN]"
+    },
+    "sms" : {
+        "from" : "[TWILIO ACCOUNT PHONE NUMBER]"
+    }
+}
