@@ -37,7 +37,7 @@
             Object.keys(controller.buttons).forEach(btn => {
                 controller.on(btn + ':down', () => console.log(controller.config.name, btn));
                 controller.on(btn + ':up', () => console.log(controller.config.name, btn));
-                controller.on(btn + ':hold', () => console.log(controller.config.name, btn + ': holding'))
+                controller.on(btn + ':hold', () => console.log(controller.config.name, `${btn}: holding`))
             });
         });
         
@@ -63,11 +63,11 @@
             Object.keys(controller.buttons).forEach(btn => {
                 controller.on(btn + ':down', () => console.log(controller.config.name, btn));
                 controller.on(btn + ':up', () => console.log(controller.config.name, btn));
-                controller.on(btn + ':hold', () => console.log(controller.config.name, btn + ': holding'))
+                controller.on(btn + ':hold', () => console.log(controller.config.name, `${btn}: holding`));
             });
-            ['left', 'right'].forEach(direction => {
-                controller.on(direction + 'Trigger', (triggerValue) => console.log(controller.config.name, direction + 'Trigger:', triggerValue));
-                controller.on(direction + 'Stick', (stickValue) => console.log(controller.config.name, direction + 'Stick:', stickValue));
+            ['left', 'right'].forEach(side => {
+                controller.on(side + 'Trigger', (triggerValue) => console.log(controller.config.name, `${side}Trigger:`, triggerValue));
+                controller.on(side + 'Stick', (stickValue) => console.log(controller.config.name, `${side}Stick:`, stickValue));
             });
         });
         
@@ -75,11 +75,11 @@
             Object.keys(controller.buttons).forEach(btn => {
                 controller.on(btn + ':down', () => console.log(controller.config.name, btn));
                 controller.on(btn + ':up', () => console.log(controller.config.name, btn));
-                controller.on(btn + ':hold', () => console.log(controller.config.name, btn + ': holding'))
+                controller.on(btn + ':hold', () => console.log(controller.config.name, `${btn}: holding`))
             });
-            ['left', 'right'].forEach(direction => {
-                controller.on(direction + 'Trigger', (triggerValue) => console.log(controller.config.name, direction + 'Trigger:', triggerValue));
-                controller.on(direction + 'Stick', (stickValue) => console.log(controller.config.name, direction + 'Stick:', stickValue));
+            ['left', 'right'].forEach(side => {
+                controller.on(side + 'Trigger', (triggerValue) => console.log(controller.config.name, `${side}Trigger:`, triggerValue));
+                controller.on(side + 'Stick', (stickValue) => console.log(controller.config.name, `${side}Stick:`, stickValue));
             });
         });
         

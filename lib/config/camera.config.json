@@ -1,0 +1,8 @@
+{
+    "camera" : "",
+    "path" : "../../",
+    "basename" : "YYYY-MM-DD-HH-mm-ss[_camera]",
+    "fps" : 24,
+    "duration" : 120,
+    "dimensions" : "1280x720"
+}
