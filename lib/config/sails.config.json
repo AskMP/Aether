@@ -1,0 +1,9 @@
+{
+    protocol : 'http',
+    host : 'localhost',
+    port : 1337,
+    subdomain : false,
+    prefix : false,
+    passthru : false,
+    headers : {}
+}
